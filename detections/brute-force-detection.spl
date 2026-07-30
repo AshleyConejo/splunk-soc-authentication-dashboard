@@ -1,0 +1,29 @@
+index=windows_auth (EventCode=4625 OR EventID=4625)
+| eval user=coalesce(
+    TargetUserName,
+    mvindex(Account_Name,-1),
+    user,
+    "Unknown"
+)
+| eval source_ip=coalesce(
+    IpAddress,
+    Source_Network_Address,
+    src,
+    "Local or unavailable"
+)
+| eval failure_reason=coalesce(
+    FailureReason,
+    Failure_Reason,
+    Status,
+    "Unknown"
+)
+| where user!="-" AND user!="" AND user!="Unknown"
+| bin _time span=5m
+| stats
+    count as failures
+    values(host) as affected_hosts
+    values(failure_reason) as failure_reasons
+    by _time user source_ip
+| where failures>=5
+| rename _time as detection_window
+| sort - detection_window - failures

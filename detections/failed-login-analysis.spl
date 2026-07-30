@@ -1,0 +1,7 @@
+index=windows_auth EventCode=4625
+| eval user=coalesce(TargetUserName, Account_Name, user, "Unknown")
+| eval source_ip=coalesce(IpAddress, Source_Network_Address, src, "Local or unavailable")
+| eval logon_type=coalesce(LogonType, Logon_Type, "Unknown")
+| eval failure_reason=coalesce(FailureReason, Failure_Reason, Status, "Unknown")
+| table _time host user source_ip logon_type failure_reason
+| sort - _time

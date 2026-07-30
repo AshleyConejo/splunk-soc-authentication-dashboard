@@ -1,0 +1,7 @@
+[tcpout]
+defaultGroup = soc_indexer
+disabled = false
+
+[tcpout:soc_indexer]
+server = <SPLUNK_SERVER_IP>:9997
+useACK = true

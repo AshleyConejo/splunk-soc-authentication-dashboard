@@ -1,0 +1,19 @@
+index=windows_auth EventCode=4625 earliest=-10m latest=now
+| eval user=coalesce(
+    TargetUserName,
+    mvindex(Account_Name,-1),
+    user
+)
+| eval src_ip=coalesce(
+    IpAddress,
+    Source_Network_Address,
+    src,
+    "Local or unavailable"
+)
+| where isnotnull(user) AND user!="-"
+| bin _time span=5m
+| stats
+    count as failures
+    values(host) as affected_hosts
+    by _time user src_ip
+| where failures>=5

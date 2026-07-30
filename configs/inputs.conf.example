@@ -1,0 +1,8 @@
+[WinEventLog://Security]
+disabled = 0
+index = windows_auth
+start_from = oldest
+current_only = 0
+checkpointInterval = 5
+whitelist = 4624-4625
+renderXml = false

@@ -62,5 +62,4 @@ Limitations:
 This is an educational Splunk Enterprise lab. It is not a production Splunk Enterprise Security deployment.
 
 Screenshots
-![alt text](screenshots/dashboard1.png)
-![alt text](<screenshots/dashboard 2.png>)
+

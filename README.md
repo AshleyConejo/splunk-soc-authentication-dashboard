@@ -1,4 +1,7 @@
 Splunk SOC Authentication Monitoring Dashboard
+<img width="1280" height="677" alt="dashboard1" src="https://github.com/user-attachments/assets/3d83472d-dbba-46aa-a761-34feb54591af" />
+<img width="1271" height="676" alt="dashboard 2" src="https://github.com/user-attachments/assets/d43f6ba8-faed-4c20-9f6c-3d29672ac482" />
+
 
 Project Overview:
 

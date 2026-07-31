@@ -2,13 +2,12 @@ Splunk SOC Authentication Monitoring Dashboard
 <img width="1280" height="677" alt="dashboard1" src="https://github.com/user-attachments/assets/3d83472d-dbba-46aa-a761-34feb54591af" />
 <img width="1271" height="676" alt="dashboard 2" src="https://github.com/user-attachments/assets/d43f6ba8-faed-4c20-9f6c-3d29672ac482" />
 
-
 Project Overview:
-
 This project is an isolated SOC lab that collects and analyzes
 Windows authentication events using Splunk Enterprise.
 
 Architecture:
+<img width="1672" height="941" alt="Topology Diagram" src="https://github.com/user-attachments/assets/88542382-9dec-4237-a390-74c3719d73b6" />
 
 - Windows 11 monitored endpoint
 - Splunk Universal Forwarder
